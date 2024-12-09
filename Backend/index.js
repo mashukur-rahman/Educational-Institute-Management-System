@@ -7,7 +7,7 @@ const login = require("./Auth/login");
 const enroll_list = require("./Admin_Dashboard/enroll_list");
 
 const registration = require("./Auth/registration");
-
+//comment
 const addUser = require("./Auth/addUser");
 const connection = mysql.createConnection({
   host: "localhost",
