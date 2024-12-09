@@ -5,7 +5,7 @@ const app = express();
 const mysql = require("mysql2");
 const login = require("./Auth/login");
 const enroll_list = require("./Admin_Dashboard/enroll_list");
-
+const create_course = require("./Admin_Dashboard/create_course");
 const registration = require("./Auth/registration");
 //aaaaa
 //comment
@@ -24,6 +24,7 @@ app.use(bodyparser.urlencoded({ extended: true }));
 app.use("/api/login", login);
 app.use("/api/registration", registration);
 app.use("/api/enroll_list", enroll_list);
+app.use("/api/create_course",create_course);
 app.listen(3000, (req, res) => {
   console.log("Server listening at port 3000");
 });
