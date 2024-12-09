@@ -21,7 +21,8 @@ app.use(bodyparser.urlencoded({ extended: true }));
 
 //routes
 app.use("/api/login", login);
-
+app.use("/api/registration", registration);
+app.use("/api/enroll_list", enroll_list);
 app.listen(3000, (req, res) => {
   console.log("Server listening at port 3000");
 });
