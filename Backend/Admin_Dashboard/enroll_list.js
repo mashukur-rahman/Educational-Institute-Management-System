@@ -11,7 +11,7 @@ const connection=mysql.createConnection({
     database : 'eims'
 })
 
-const enroll_list = app.get("/", (req, res) => {
+const enroll_list = app.post("/", (req, res) => {
     const course_code = req.body.course_code;
     const query = `
                     SELECT
@@ -32,7 +32,7 @@ const enroll_list = app.get("/", (req, res) => {
     
     connection.query(query, [course_code], (err, results) => {
         if (err) throw err;
-        //console.log(results);
+        console.log(results);
         res.json(results);
     });               
 });
