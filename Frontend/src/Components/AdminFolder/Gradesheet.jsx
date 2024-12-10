@@ -1,58 +1,101 @@
 import React from "react";
 
-
 const Gradesheet = () => {
-
-    const grades = [
+  const grades = [
+    {
+      semester: "Summer 2023",
+      studentName: "Kiran",
+      courses: [
         {
-          semester: "Summer 2023",
-          studentName: "Kiran",
-          courses: [
-            { courseName: "Programming Language I", credits: 3.0, grade: "A-", gradePoint: 3.7 },
-            { courseName: "Foundation Course (English)", credits: 0.0, grade: "A-", gradePoint: 3.7 },
-            { courseName: "Mathematics I", credits: 3.0, grade: "A+", gradePoint: 4.0 },
-            { courseName: "Principles of Physics I", credits: 3.0, grade: "A", gradePoint: 4.0 },
-          ],
+          courseName: "Programming Language I",
+          credits: 3.0,
+          grade: "A-",
+          gradePoint: 3.7,
         },
         {
-          semester: "Fall 2023",
-          studentName: "Kiran",
-          courses: [
-            { courseName: "Programming Language II", credits: 3.0, grade: "A", gradePoint: 4.0 },
-            { courseName: "Fundamentals of English", credits: 3.0, grade: "A-", gradePoint: 3.7 },
-            { courseName: "Mathematics II", credits: 3.0, grade: "A", gradePoint: 4.0 },
-            { courseName: "Elements of Statistics", credits: 3.0, grade: "B+", gradePoint: 3.3 },
-          ],
+          courseName: "Foundation Course (English)",
+          credits: 0.0,
+          grade: "A-",
+          gradePoint: 3.7,
         },
-      ];
+        {
+          courseName: "Mathematics I",
+          credits: 3.0,
+          grade: "A+",
+          gradePoint: 4.0,
+        },
+        {
+          courseName: "Principles of Physics I",
+          credits: 3.0,
+          grade: "A",
+          gradePoint: 4.0,
+        },
+      ],
+    },
+    {
+      semester: "Fall 2023",
+      studentName: "Kiran",
+      courses: [
+        {
+          courseName: "Programming Language II",
+          credits: 3.0,
+          grade: "A",
+          gradePoint: 4.0,
+        },
+        {
+          courseName: "Fundamentals of English",
+          credits: 3.0,
+          grade: "A-",
+          gradePoint: 3.7,
+        },
+        {
+          courseName: "Mathematics II",
+          credits: 3.0,
+          grade: "A",
+          gradePoint: 4.0,
+        },
+        {
+          courseName: "Elements of Statistics",
+          credits: 3.0,
+          grade: "B+",
+          gradePoint: 3.3,
+        },
+      ],
+    },
+  ];
 
-      const calculateStudentCGPA = (grades, studentName) => {
-        let totalGradePoints = 0;
-        let totalCourses = 0;
-      
-        grades.forEach(entry => {
-          if (entry.studentName === studentName) {
-            entry.courses.forEach(course => {
-              if (course.credits > 0) { // Only count courses with non-zero credits
-                totalGradePoints += course.gradePoint;
-                totalCourses += 1;
-              }
-            });
+  const calculateStudentCGPA = (grades, studentName) => {
+    let totalGradePoints = 0;
+    let totalCourses = 0;
+
+    grades.forEach((entry) => {
+      if (entry.studentName === studentName) {
+        entry.courses.forEach((course) => {
+          if (course.credits > 0) {
+            // Only count courses with non-zero credits
+            totalGradePoints += course.gradePoint;
+            totalCourses += 1;
           }
         });
-      
-        return totalCourses > 0 ? (totalGradePoints / totalCourses).toFixed(2) : "N/A";
-      };
-      
-      // Calculate CGPA for Kiran
-    //   const kiranCGPA = calculateStudentCGPA(grades, "Kiran");
-    //   console.log(`Cumulative CGPA for Kiran: ${kiranCGPA}`);
+      }
+    });
 
-      return (
-        <div>
-                <h2 className="text-2xl font-bold my-4 text-center text-blue-600">Total Grade</h2>
+    return totalCourses > 0
+      ? (totalGradePoints / totalCourses).toFixed(2)
+      : "N/A";
+  };
 
-        <div className="overflow-x-auto p-4">
+  // Calculate CGPA for Kiran
+  //   const kiranCGPA = calculateStudentCGPA(grades, "Kiran");
+  //   console.log(`Cumulative CGPA for Kiran: ${kiranCGPA}`);
+
+  return (
+    <div>
+      <h2 className="text-2xl font-bold my-4 text-center text-blue-600">
+        Total Grade
+      </h2>
+
+      <div className="overflow-x-auto p-4">
         <table className="table w-full border border-gray-300 rounded-lg shadow-md">
           {/* Table Header */}
           <thead className="bg-blue-500 text-white">
@@ -96,7 +139,9 @@ const Gradesheet = () => {
                     <td className="py-3 px-4">{course.courseName}</td>
                     <td className="py-3 px-4 text-center">{course.credits}</td>
                     <td className="py-3 px-4 text-center">{course.grade}</td>
-                    <td className="py-3 px-4 text-center">{course.gradePoint}</td>
+                    <td className="py-3 px-4 text-center">
+                      {course.gradePoint}
+                    </td>
                   </tr>
                 ))}
               </React.Fragment>
@@ -115,9 +160,8 @@ const Gradesheet = () => {
           </tfoot>
         </table>
       </div>
-
-      </div>
+    </div>
   );
-}
+};
 
 export default Gradesheet;
