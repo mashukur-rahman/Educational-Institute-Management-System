@@ -21,7 +21,7 @@ const AddMaterial = () => {
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100">
       <div className="bg-white p-6 rounded-lg shadow-md w-full max-w-md">
-        <h2 className="text-2xl font-bold mb-4 text-center">Add Course</h2>
+        <h2 className="text-2xl font-bold mb-4 text-center">Add Material</h2>
         <form onSubmit={handleSubmit}>
           {/* Course Code */}
           <div className="mb-4">
