@@ -4,12 +4,12 @@ const jwt = require("jsonwebtoken");
 const app = express();
 const mysql = require("mysql2");
 
-const connection=mysql.createConnection({
-    host     : 'localhost',
-    user     : 'root',
-    password : '',
-    database : 'eims'
-})
+const connection = mysql.createConnection({
+  host: "localhost",
+  user: "root",
+  password: "",
+  database: "eims",
+});
 
 const enrolled_courses = app.post("/", (req, res) => {
 
@@ -17,35 +17,16 @@ const enrolled_courses = app.post("/", (req, res) => {
     
     console.log(req.body);
     const query = `
-                    SELECT
-                        course_details.course_code,
-                        course_details.section,
-                        course_details.course_name,
-                        course_details.theory_room,
-                        course_details.theory_timing,
-                        course_details.lab_room,
-                        course_details.lab_timing,
-                        course_details.faculty_email,
-                        course_details.faculty_initial,
-                        course_details.semester
-                    FROM 
-                        course_details
-                    INNER JOIN 
-                        enrolled_list
-                    ON 
-                        course_details.course_code = enrolled_list.course_code
-                    WHERE 
-                        enrolled_list.email = ?
+                    SELECT course_code, semester, section
+                    FROM enrolled_list
+                    WHERE
+                         email = ?
                     `;
 
-
-    connection.query(query, [email], (err, result) => {
-        if(err) res.send(err);
-        res.json(result);
-
-    });
-
-
+  connection.query(query, [email], (err, result) => {
+    if (err) res.send(err);
+    res.json(result);
+  });
 });
 
 module.exports = app;
