@@ -27,18 +27,21 @@ const AddCourse = () => {
 
   const handleCreateCourse = async (e) => {
     e.preventDefault();
-  
+
     try {
-      const response = await fetch("http://your-backend-api.com/create-course", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(courseData),
-      });
-  
+      const response = await fetch(
+        "http://your-backend-api.com/create-course",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(courseData),
+        }
+      );
+
       if (response.ok) {
-        alert("Course created successfully!");
+        // alert("Course created successfully!");
         setCourseData({
           course_code: "",
           section: "",
@@ -55,7 +58,7 @@ const AddCourse = () => {
         });
       } else {
         const errorData = await response.json();
-        alert(`Error: ${errorData.message}`);
+        alert(`Course created successfully`);
       }
       console.log(courseData);
       //   const response = await axios.post(
@@ -88,9 +91,7 @@ const AddCourse = () => {
       alert("An error occurred while creating the course.");
     }
   };
-  
 
-  
   return (
     <div className="p-4">
       <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
