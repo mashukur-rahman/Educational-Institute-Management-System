@@ -9,6 +9,7 @@ const create_course = require("./Admin_Dashboard/create_course");
 const registration = require("./Auth/registration");
 const assign_faculty = require("./Admin_Dashboard/assign_faculty");
 const delete_course = require("./Admin_Dashboard/delete_course");
+const edit_course = require("./Course_Management/edit_course");
 //aaaaa
 //comment
 const addUser = require("./Auth/addUser");
@@ -29,7 +30,7 @@ app.use("/api/enroll_list", enroll_list);
 app.use("/api/create_course",create_course);
 app.use("/api/assign_faculty",assign_faculty);
 app.use("/api/delete_course",delete_course);
-
+app.use("/api/edit_course",edit_course);
 app.listen(3000, (req, res) => {
   console.log("Server listening at port 3000");
 });
