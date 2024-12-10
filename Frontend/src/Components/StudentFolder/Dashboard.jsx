@@ -21,9 +21,12 @@ const Dashboard = () => {
 
   useEffect(() => {
     async function getCourses2() {
-      const result2 = await axios.post(backendlink + "/api/enrolled_courses", {
-        email: user,
-      });
+      const result2 = await axios.post(
+        backendlink + "/api/enrolled_courses_detail",
+        {
+          email: user,
+        }
+      );
       if (result2.data) {
         setSchedules(result2.data);
       }
