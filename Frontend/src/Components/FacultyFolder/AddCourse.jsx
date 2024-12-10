@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-
+import backendlink from "../../backendapilink";
+import axios from "axios";
 const AddCourse = () => {
   const [courseData, setCourseData] = useState({
     course_code: "",
@@ -13,6 +14,7 @@ const AddCourse = () => {
     credit: "",
     availability: "",
     department: "",
+    semester: "",
   });
 
   const handleInputChange = (e) => {
@@ -27,27 +29,32 @@ const AddCourse = () => {
     e.preventDefault();
 
     try {
-      const response = await az;
+      console.log(courseData);
+      //   const response = await axios.post(
+      //     backendlink + "/api/create_course",
+      //     courseData
+      //   );
 
-      if (response.ok) {
-        alert("Course created successfully!");
-        setCourseData({
-          course_code: "",
-          section: "",
-          course_name: "",
-          description: "",
-          theory_room: "",
-          theory_timing: "",
-          lab_room: "",
-          lab_timing: "",
-          credit: "",
-          availability: "",
-          department: "",
-        });
-      } else {
-        const errorData = await response.json();
-        alert(`Error: ${errorData.message}`);
-      }
+      //   if (response.ok) {
+      //     alert("Course created successfully!");
+      //     setCourseData({
+      //       course_code: "",
+      //       section: "",
+      //       course_name: "",
+      //       description: "",
+      //       theory_room: "",
+      //       theory_timing: "",
+      //       lab_room: "",
+      //       lab_timing: "",
+      //       credit: "",
+      //       availability: "",
+      //       department: "",
+      //       semester: "",
+      //     });
+      //   } else {
+      //     const errorData = await response.json();
+      //     alert(`Error: ${errorData.message}`);
+      //   }
     } catch (error) {
       console.error("Error creating course:", error);
       alert("An error occurred while creating the course.");
@@ -108,6 +115,22 @@ const AddCourse = () => {
                 value={courseData.course_name}
                 onChange={handleInputChange}
                 placeholder="Enter course name"
+                className="input input-bordered w-full"
+              />
+            </div>
+            <div>
+              <label
+                className="block text-sm font-medium mb-2"
+                htmlFor="semester"
+              >
+                Semester
+              </label>
+              <input
+                type="text"
+                id="semester"
+                value={courseData.semester}
+                onChange={handleInputChange}
+                placeholder="Enter semester"
                 className="input input-bordered w-full"
               />
             </div>

@@ -13,9 +13,9 @@ const connection = mysql.createConnection({
 
 const enrolled_courses = app.post("/", (req, res) => {
   const email = req.body.email;
-    
-    //console.log(req.body);
-    const query = `
+
+  //console.log(req.body);
+  const query = `
                     SELECT
                         course_details.course_code,
                         course_details.section,

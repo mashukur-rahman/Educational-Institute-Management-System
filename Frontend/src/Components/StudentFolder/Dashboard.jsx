@@ -4,6 +4,7 @@ import backendlink from "../../backendapilink";
 import { jwtDecode } from "jwt-decode";
 const Dashboard = () => {
   const [courses, setCourses] = useState([]);
+  const [schedules, setSchedules] = useState([]);
   const user = jwtDecode(JSON.parse(sessionStorage.getItem("token"))).email;
   useEffect(() => {
     async function getCourses() {
@@ -16,6 +17,18 @@ const Dashboard = () => {
       }
     }
     getCourses();
+  }, []);
+
+  useEffect(() => {
+    async function getCourses2() {
+      const result2 = await axios.post(backendlink + "/api/enrolled_courses", {
+        email: user,
+      });
+      if (result2.data) {
+        setSchedules(result2.data);
+      }
+    }
+    getCourses2();
   }, []);
 
   // const courses = [
@@ -119,26 +132,25 @@ const Dashboard = () => {
           <table className="table-auto border-collapse border border-gray-300 w-full text-center">
             <thead className="bg-blue-500 text-white">
               <tr>
+                <th className="py-2 px-4">Course</th>
                 <th className="py-2 px-4">Time</th>
-                {courses.map((day) => (
+                <th className="py-2 px-4">Room</th>
+                {/* {schedules.map((day) => (
                   <th key={day} className="py-2 px-4">
                     {day.theory_timing}
                   </th>
-                ))}
+                ))} */}
               </tr>
             </thead>
-            {/* <tbody>
-              {scheduleMatrix.map((row, rowIndex) => (
+            <tbody>
+              {schedules.map((row, rowIndex) => (
                 <tr key={rowIndex}>
-                  <td className="font-bold py-2 px-4">{timeSlots[rowIndex]}</td>
-                  {row.map((course, colIndex) => (
-                    <td key={`${rowIndex}-${colIndex}`} className="py-2 px-4">
-                      {course}
-                    </td>
-                  ))}
+                  <td className="font-bold py-2 px-4">{row.course_code}</td>
+                  <td className="font-bold py-2 px-4">{row.theory_timing}</td>
+                  <td className="font-bold py-2 px-4">{row.theory_room}</td>
                 </tr>
               ))}
-            </tbody> */}
+            </tbody>
           </table>
         </div>
       </div>
