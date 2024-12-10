@@ -27,6 +27,7 @@ import Profile from "./Components/StudentFolder/Profile";
 import FacultyDashboard from "./Components/FacultyFolder/FacultyDashboard";
 import AddCourse from "./Components/FacultyFolder/AddCourse";
 import AddMaterial from "./Components/FacultyFolder/AddMaterial";
+import FacultyGrade from "./Components/FacultyFolder/FacultyGrade";
 
 const router = createBrowserRouter([
   {
@@ -87,6 +88,10 @@ const router = createBrowserRouter([
       {
         path: "addMaterial",
         element: <AddMaterial></AddMaterial>,
+      },
+      {
+        path: "facultygrade",
+        element: <FacultyGrade></FacultyGrade>,
       },
 
     ],
