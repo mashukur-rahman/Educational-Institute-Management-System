@@ -44,20 +44,23 @@ const router = createBrowserRouter([
     element: <Admin></Admin>,
     children: [
       {
-        path: "dashboard",
+        path: "studentdashboard",
         element: <Dashboard></Dashboard>,
       },
       {
         path: "gradesheet",
         element: <Gradesheet></Gradesheet>,
       },
-    ],
       {
         path: "enroll",
         element: <Enroll></Enroll>,
       },
-    ]
+    ],
   },
+  // {
+  //   path: "/studentdashboard",
+  //   element: <Dashboard />,
+  // },
 ]);
 
 const root = document.getElementById("root");

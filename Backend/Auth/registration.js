@@ -19,8 +19,11 @@ const registration = app.post("/", (req, res) => {
     qry,
     [req.body.email, req.body.password, req.body.role],
     (err, result) => {
-      console.log("result:", result);
-      res.json(result);
+      if (err) {
+        res.send("error");
+      } else {
+        res.send("successful");
+      }
     }
   );
 });

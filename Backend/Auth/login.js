@@ -17,12 +17,14 @@ const login = app.post("/", (req, res) => {
   connection.query(qry, [req.body.email, req.body.password], (err, result) => {
     if (err) {
       res.send("Could not login");
-    } else {
+    } else if (result.length == 1) {
       const token = jwt.sign(
         { email: req.body.email, role: "student" },
         secret
       );
-      res.send(token);
+      res.json(token);
+    } else {
+      res.send("failed");
     }
   });
 });
