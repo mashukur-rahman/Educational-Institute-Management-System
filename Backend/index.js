@@ -14,6 +14,7 @@ const edit_course = require("./Course_Management/edit_courses");
 const course_resources = require("./Course_Management/course_resources.js");
 const course_list = require("./Student_Dashboard/course_list");
 const enroll = require("./Student_Dashboard/enroll");
+const enrolled_courses_detail = require("./Student_Dashboard/enrolled_courses_detail");
 const enrolled_courses = require("./Student_Dashboard/enrolled_courses");
 //aaaaa
 //comment
@@ -40,6 +41,7 @@ app.use("/api/course_resources", course_resources);
 app.use("/api/course_list", course_list);
 app.use("/api/enroll", enroll);
 app.use("/api/enrolled_courses", enrolled_courses);
+app.use("/api/enrolled_courses_detail", enrolled_courses_detail);
 app.listen(3000, (req, res) => {
   console.log("Server listening at port 3000");
 });

@@ -1,3 +1,4 @@
+//details  of courses give a student email
 const express = require("express");
 const bodyparser = require("body-parser");
 const jwt = require("jsonwebtoken");
@@ -14,12 +15,12 @@ const connection = mysql.createConnection({
 const enrolled_courses = app.post("/", (req, res) => {
   const email = req.body.email;
 
-  console.log(req.body);
+  //console.log(req.body);
   const query = `
                     SELECT course_code, semester, section
                     FROM enrolled_list
-                    WHERE
-                         email = ?
+                    WHERE 
+                        enrolled_list.email = ?
                     `;
 
   connection.query(query, [email], (err, result) => {
