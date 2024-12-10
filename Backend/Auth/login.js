@@ -19,7 +19,7 @@ const login = app.post("/", (req, res) => {
       res.send("Could not login");
     } else if (result.length == 1) {
       const token = jwt.sign(
-        { email: req.body.email, role: "student" },
+        { email: req.body.email, role: result[0].role },
         secret
       );
       res.json(token);
