@@ -7,9 +7,10 @@ import { FaArrowRightFromBracket, FaBookOpen } from "react-icons/fa6";
 import { MdOutlineLeaderboard } from "react-icons/md";
 import { RxDashboard } from "react-icons/rx";
 import { VscInbox } from "react-icons/vsc";
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet, useNavigate } from "react-router-dom";
 
 const Admin = () => {
+  const navigate = useNavigate();
   const [student, setStudent] = useState(false);
   const [faculty, setFaculty] = useState(false);
   useEffect(() => {
@@ -20,6 +21,11 @@ const Admin = () => {
       setFaculty(true);
     }
   }, []);
+
+  function logout() {
+    sessionStorage.clear();
+    navigate("/");
+  }
 
   const [isSidebarVisible, setIsSidebarVisible] = useState(true);
   const handleSideBar = () => {
@@ -108,7 +114,10 @@ const Admin = () => {
           </div>
         )}
 
-        <button className="flex items-center gap-4 text-[#dc4c3e] font-semibold mt-auto">
+        <button
+          className="flex items-center gap-4 text-[#dc4c3e] font-semibold mt-auto"
+          onClick={logout}
+        >
           <FaArrowRightFromBracket />
           Logout
         </button>
