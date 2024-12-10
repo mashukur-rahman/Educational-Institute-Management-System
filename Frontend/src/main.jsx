@@ -23,6 +23,7 @@ import Dashboard from "./Components/StudentFolder/Dashboard";
 import Gradesheet from "./Components/AdminFolder/Gradesheet";
 import Enroll from "./Components/StudentFolder/Enroll";
 import Material from "./Components/StudentFolder/Material";
+import Profile from "./Components/StudentFolder/Profile";
 
 const router = createBrowserRouter([
   {
@@ -52,6 +53,7 @@ const router = createBrowserRouter([
         path: "gradesheet",
         element: <Gradesheet></Gradesheet>,
       },
+    
       {
         path: "enroll",
         element: <Enroll></Enroll>,
@@ -66,7 +68,11 @@ const router = createBrowserRouter([
       //   path: "/studentdashboard",
       //   element: <Dashboard />,
     ],
-  },
+      {
+        path: "profile",
+        element: <Profile></Profile>,
+      },
+
   // },
 ]);
 

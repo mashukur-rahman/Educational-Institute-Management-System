@@ -59,7 +59,7 @@ const Admin = () => {
                         <button onClick={handleSideBar}><BsLayoutSidebar className="text-xl" /></button>
                     </div>
                     <NavLink to='studentdashboard' className="flex items-center mt-4 py-2"><VscInbox className="mr-2 text-xl" />Dashboard</NavLink>
-                    <NavLink to='/dashboard' className="flex items-center pb-2"><CgProfile  className="mr-2 text-xl" /> Profile</NavLink>
+                    <NavLink to='profile' className="flex items-center pb-2"><CgProfile  className="mr-2 text-xl" /> Profile</NavLink>
                     <NavLink to='gradesheet' className="flex items-center pb-2"><RxDashboard className="mr-2 text-xl" /> Gradesheet</NavLink>
                     <NavLink to='material' className="flex items-center pb-2"><FaBookOpen className="mr-2 text-xl" /> Material</NavLink>
                     <NavLink to='enroll' className="flex items-center pb-2"><AiOutlineProfile className="mr-2 text-xl" /> Enroll</NavLink>
