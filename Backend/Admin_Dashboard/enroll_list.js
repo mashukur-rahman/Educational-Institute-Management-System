@@ -1,3 +1,4 @@
+//list, details of enrolled students against a course_code
 const express = require("express");
 const bodyparser = require("body-parser");
 const jwt = require("jsonwebtoken");
@@ -25,7 +26,7 @@ const enroll_list = app.post("/", (req, res) => {
                     INNER JOIN 
                         enrolled_list
                     ON 
-                        student.student_id = enrolled_list.student_id
+                        student.email = enrolled_list.email
                     WHERE 
                         enrolled_list.course_code = ?
                     `;
