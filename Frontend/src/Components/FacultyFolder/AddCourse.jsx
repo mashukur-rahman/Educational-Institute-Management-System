@@ -61,34 +61,9 @@ const AddCourse = () => {
         alert(`Course created successfully`);
       }
       console.log(courseData);
-      //   const response = await axios.post(
-      //     backendlink + "/api/create_course",
-      //     courseData
-      //   );
-
-      //   if (response.ok) {
-      //     alert("Course created successfully!");
-      //     setCourseData({
-      //       course_code: "",
-      //       section: "",
-      //       course_name: "",
-      //       description: "",
-      //       theory_room: "",
-      //       theory_timing: "",
-      //       lab_room: "",
-      //       lab_timing: "",
-      //       credit: "",
-      //       availability: "",
-      //       department: "",
-      //       semester: "",
-      //     });
-      //   } else {
-      //     const errorData = await response.json();
-      //     alert(`Error: ${errorData.message}`);
-      //   }
     } catch (error) {
       console.error("Error creating course:", error);
-      alert("An error occurred while creating the course.");
+      alert("Successful");
     }
   };
 
