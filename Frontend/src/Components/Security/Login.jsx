@@ -20,12 +20,19 @@ const Login = () => {
         email: email,
         password: password,
       });
-      if (response) {
-        sessionStorage.setItem("token", { token: response.data });
+      if (response.data != "failed") {
+        const stringtoken = JSON.stringify(response.data);
+        sessionStorage.setItem("token", stringtoken);
         const user = jwtDecode(response.data);
+        console.log(user);
         if (user.role == "student") {
-          navigate("/admin/");
+          navigate("/admin/studentdashboard");
+        } else if (user.role == "faculty") {
+          navigate("/facultydashboard");
         }
+      } else {
+        alert("Could not login");
+        navigate("/");
       }
     }
     submit();

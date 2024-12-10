@@ -58,6 +58,7 @@ const router = createBrowserRouter([
         path: "enroll",
         element: <Enroll></Enroll>,
       },
+    ],
       {
         path: "material",
         element: <Material></Material>,
@@ -68,6 +69,10 @@ const router = createBrowserRouter([
       },
     ]
   },
+  // {
+  //   path: "/studentdashboard",
+  //   element: <Dashboard />,
+  // },
 ]);
 
 const root = document.getElementById("root");
