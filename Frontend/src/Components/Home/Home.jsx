@@ -1,5 +1,5 @@
 
-import {  NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 import './../../App.css'
 
 
@@ -7,8 +7,8 @@ const Home = () => {
 
 
     return (
-        <div className="bg-[#F7F5F9] pt-24 px-12 md:px-16 flex flex-col lg:flex-row ">
-            <div className="w-full lg:w-3/5 mr-16">
+        <div className="bg-[#F7F5F9] pt-24 px-24 md:px-16 flex flex-col ">
+            <div className="w-full  mr-16">
                 <h3 className="italic text-xl md:text-4xl font-bold pb-2 md:pb-8">Edu ed <span className="text-customBlue">Your Gateway</span> to <span className="text-customPurple"> Knowledge & Growth</span></h3>
                 <p className="text-[14px] pb-2">we believe education is the key to unlocking potential and shaping a better future. Our platform is designed to provide learners of all ages and backgrounds with access to high-quality, interactive, and engaging educational resources.
                 </p>
@@ -16,21 +16,15 @@ const Home = () => {
                 <img className="hidden lg:flex" src="https://i.ibb.co/nq21Pzn/Group-27.png" alt="" />
             </div>
             <div className="w-full lg:w-2/5">
-                <div className="flex gap-4 mb-4 nav">
-                    <NavLink className='no-underline text-gray-400 font-bold' to='/login'>Sign In</NavLink>
-                    <NavLink className='no-underline text-gray-400 font-bold' to='/signup'>Join In</NavLink>
 
-                </div>
-              
-                {/* <Outlet></Outlet> */}
                 <div className="flex flex-col-reverse lg:flex-col">
-                    {/* carosaul  */}
-        </div>
+                    <div>
+                        <img className="lg:hidden mt-8" src="https://i.ibb.co/nq21Pzn/Group-27.png" alt="" />
+                    </div>
+                </div>
 
             </div>
-            <div>
-            <img className="lg:hidden mt-8" src="https://i.ibb.co/nq21Pzn/Group-27.png" alt="" />
-            </div>
+
         </div>
     );
 };
