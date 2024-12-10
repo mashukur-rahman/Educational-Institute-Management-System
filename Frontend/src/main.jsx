@@ -22,6 +22,7 @@ import "./index.css";
 import Dashboard from "./Components/StudentFolder/Dashboard";
 import Gradesheet from "./Components/AdminFolder/Gradesheet";
 import Enroll from "./Components/StudentFolder/Enroll";
+import Material from "./Components/StudentFolder/Material";
 
 const router = createBrowserRouter([
   {
@@ -56,6 +57,11 @@ const router = createBrowserRouter([
         element: <Enroll></Enroll>,
       },
     ],
+      {
+        path: "material",
+        element: <Material></Material>,
+      },
+    ]
   },
   // {
   //   path: "/studentdashboard",
