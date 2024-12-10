@@ -3,6 +3,7 @@ import { AiOutlineProfile } from "react-icons/ai";
 import { BsLayoutSidebar } from "react-icons/bs";
 import { CgProfile } from "react-icons/cg";
 import { FaArrowRightFromBracket, FaBookOpen } from "react-icons/fa6";
+import { MdOutlineLeaderboard } from "react-icons/md";
 import { RxDashboard } from "react-icons/rx";
 import { VscInbox } from "react-icons/vsc";
 import { NavLink, Outlet } from "react-router-dom";
@@ -42,18 +43,17 @@ const Admin = () => {
                     <NavLink className="flex items-center pb-2"><SiGitconnected className="mr-2 text-xl" /> Students</NavLink>
                 </div> */}
                 {/* if role faculty  */}
-                {/* <div>
+                <div>
                     <div className="flex justify-between items-center w-full">
                         <div className="font-bold">Faculty</div>
                         <button onClick={handleSideBar}><BsLayoutSidebar className="text-xl" /></button>
                     </div>
-                    <NavLink to='/inbox' className="flex items-center mt-4 py-2"><VscInbox className="mr-2 text-xl" />Courses</NavLink>
-                    <NavLink to='/dashboard' className="flex items-center pb-2"><RxDashboard className="mr-2 text-xl" /> Upload course</NavLink>
-                    <NavLink to='/leaderboard' className="flex items-center pb-2"><MdOutlineLeaderboard className="mr-2 text-xl" />Attendence</NavLink>
-                    <NavLink className="flex items-center pb-2"><SiGitconnected className="mr-2 text-xl" /> Grade</NavLink>
-                </div> */}
+                    <NavLink to='facultyDashboard' className="flex items-center mt-4 py-2"><VscInbox className="mr-2 text-xl" />Dashboard</NavLink>
+                    <NavLink to='addCourse' className="flex items-center pb-2"><RxDashboard className="mr-2 text-xl" /> Create course</NavLink>
+                    <NavLink to='addMaterial' className="flex items-center pb-2"><MdOutlineLeaderboard className="mr-2 text-xl" />Add material</NavLink>
+                </div> 
                 {/* if role student  */}
-                <div>
+                {/* <div>
                     <div className="flex justify-between items-center w-full">
                         <div className="font-bold">Student</div>
                         <button onClick={handleSideBar}><BsLayoutSidebar className="text-xl" /></button>
@@ -64,7 +64,7 @@ const Admin = () => {
                     <NavLink to='material' className="flex items-center pb-2"><FaBookOpen className="mr-2 text-xl" /> Material</NavLink>
                     <NavLink to='enroll' className="flex items-center pb-2"><AiOutlineProfile className="mr-2 text-xl" /> Enroll</NavLink>
          
-                </div>
+                </div> */}
 
                 <button className="flex items-center gap-4 text-[#dc4c3e] font-semibold mt-auto" >
                     <FaArrowRightFromBracket />Logout
