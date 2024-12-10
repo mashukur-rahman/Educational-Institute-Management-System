@@ -3,8 +3,6 @@
 // import './index.css'
 // import App from './App.jsx'
 
-
-
 // createRoot(document.getElementById('root')).render(
 //   <StrictMode>
 //     <App />
@@ -24,9 +22,7 @@ import "./index.css";
 import Dashboard from "./Components/StudentFolder/Dashboard";
 import Gradesheet from "./Components/AdminFolder/Gradesheet";
 
-
 const router = createBrowserRouter([
-
   {
     path: "/",
     element: <Main></Main>,
@@ -35,17 +31,13 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: <Login></Login>,
-    children: [
-
-    ]
+    children: [],
   },
   {
     path: "/register",
     element: <Register></Register>,
-    children: [
-
-    ]
-  }, 
+    children: [],
+  },
   {
     path: "/admin",
     element: <Admin></Admin>,
@@ -58,9 +50,8 @@ const router = createBrowserRouter([
         path: "gradesheet",
         element: <Gradesheet></Gradesheet>,
       },
-    ]
+    ],
   },
-
 ]);
 
 const root = document.getElementById("root");
@@ -68,5 +59,5 @@ const root = document.getElementById("root");
 ReactDOM.createRoot(root).render(
   <React.StrictMode>
     <RouterProvider router={router} />
-  </React.StrictMode>,
+  </React.StrictMode>
 );
