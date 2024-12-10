@@ -11,8 +11,9 @@ const registration = require("./Auth/registration");
 const assign_faculty = require("./Admin_Dashboard/assign_faculty");
 const delete_course = require("./Admin_Dashboard/delete_course");
 const edit_course = require("./Course_Management/edit_courses");
-const course_resources = require("./Course_Management/course_resources");
-
+const course_resources = require("./Course_Management/course_resources.js");
+const course_list = require("./Student_Dashboard/course_list");
+const enroll = require("./Student_Dashboard/enroll");
 //aaaaa
 //comment
 const addUser = require("./Auth/addUser");
@@ -30,13 +31,13 @@ app.use(cors());
 app.use("/api/login", login);
 app.use("/api/registration", registration);
 app.use("/api/enroll_list", enroll_list);
-app.use("/api/create_course",create_course);
-app.use("/api/assign_faculty",assign_faculty);
-app.use("/api/delete_course",delete_course);
-app.use("/api/edit_course",edit_course);
+app.use("/api/create_course", create_course);
+app.use("/api/assign_faculty", assign_faculty);
+app.use("/api/delete_course", delete_course);
+app.use("/api/edit_course", edit_course);
 app.use("/api/course_resources", course_resources);
-
-
+app.use("/api/course_list", course_list);
+app.use("/api/enroll", enroll);
 app.listen(3000, (req, res) => {
   console.log("Server listening at port 3000");
 });

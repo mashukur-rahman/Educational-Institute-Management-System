@@ -58,36 +58,29 @@ const router = createBrowserRouter([
         path: "gradesheet",
         element: <Gradesheet></Gradesheet>,
       },
-    
+
       {
         path: "enroll",
         element: <Enroll></Enroll>,
       },
+
       {
         path: "material",
         element: <Material></Material>,
       },
+
+      // {
+      //   path: "/studentdashboard",
+      //   element: <Dashboard />,
+
       {
         path: "profile",
         element: <Profile></Profile>,
       },
 
-      // faculty path 
-      {
-        path: "facultyDashboard",
-        element: <FacultyDashboard></FacultyDashboard>,
-      },
-      {
-        path: "addCourse",
-        element: <AddCourse></AddCourse>,
-      },
-      {
-        path: "addMaterial",
-        element: <AddMaterial></AddMaterial>,
-      },
-    ]
+      // },
+    ],
   },
-
 ]);
 
 const root = document.getElementById("root");
