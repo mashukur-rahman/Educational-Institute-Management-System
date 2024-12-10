@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-
+import backendlink from "../../backendapilink";
+import axios from "axios";
 const AddCourse = () => {
   const [courseData, setCourseData] = useState({
     course_code: "",
@@ -13,6 +14,7 @@ const AddCourse = () => {
     credit: "",
     availability: "",
     department: "",
+    semester: "",
   });
 
   const handleInputChange = (e) => {
@@ -25,10 +27,16 @@ const AddCourse = () => {
 
   const handleCreateCourse = async (e) => {
     e.preventDefault();
-
+  
     try {
-      const response = await az;
-
+      const response = await fetch("http://your-backend-api.com/create-course", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(courseData),
+      });
+  
       if (response.ok) {
         alert("Course created successfully!");
         setCourseData({
@@ -43,17 +51,46 @@ const AddCourse = () => {
           credit: "",
           availability: "",
           department: "",
+          semester: "",
         });
       } else {
         const errorData = await response.json();
         alert(`Error: ${errorData.message}`);
       }
+      console.log(courseData);
+      //   const response = await axios.post(
+      //     backendlink + "/api/create_course",
+      //     courseData
+      //   );
+
+      //   if (response.ok) {
+      //     alert("Course created successfully!");
+      //     setCourseData({
+      //       course_code: "",
+      //       section: "",
+      //       course_name: "",
+      //       description: "",
+      //       theory_room: "",
+      //       theory_timing: "",
+      //       lab_room: "",
+      //       lab_timing: "",
+      //       credit: "",
+      //       availability: "",
+      //       department: "",
+      //       semester: "",
+      //     });
+      //   } else {
+      //     const errorData = await response.json();
+      //     alert(`Error: ${errorData.message}`);
+      //   }
     } catch (error) {
       console.error("Error creating course:", error);
       alert("An error occurred while creating the course.");
     }
   };
+  
 
+  
   return (
     <div className="p-4">
       <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
@@ -108,6 +145,22 @@ const AddCourse = () => {
                 value={courseData.course_name}
                 onChange={handleInputChange}
                 placeholder="Enter course name"
+                className="input input-bordered w-full"
+              />
+            </div>
+            <div>
+              <label
+                className="block text-sm font-medium mb-2"
+                htmlFor="semester"
+              >
+                Semester
+              </label>
+              <input
+                type="text"
+                id="semester"
+                value={courseData.semester}
+                onChange={handleInputChange}
+                placeholder="Enter semester"
                 className="input input-bordered w-full"
               />
             </div>
@@ -245,6 +298,23 @@ const AddCourse = () => {
                 value={courseData.department}
                 onChange={handleInputChange}
                 placeholder="Enter department"
+                className="input input-bordered w-full"
+              />
+            </div>
+            {/* Semester */}
+            <div className="col-span-2">
+              <label
+                className="block text-sm font-medium mb-2"
+                htmlFor="semester"
+              >
+                semester
+              </label>
+              <input
+                type="text"
+                id="semester"
+                value={courseData.semester}
+                onChange={handleInputChange}
+                placeholder="Enter semester"
                 className="input input-bordered w-full"
               />
             </div>

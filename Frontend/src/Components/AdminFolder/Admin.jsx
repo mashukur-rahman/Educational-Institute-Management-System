@@ -82,6 +82,10 @@ const Admin = () => {
               <MdOutlineLeaderboard className="mr-2 text-xl" />
               Add material
             </NavLink>
+            <NavLink to="facultygrade" className="flex items-center pb-2">
+              <MdOutlineLeaderboard className="mr-2 text-xl" />
+              Update GradeSheet
+            </NavLink>
           </div>
         )}
         {student && (
