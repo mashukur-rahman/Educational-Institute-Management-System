@@ -62,7 +62,7 @@ const Admin = () => {
                     <NavLink to='/dashboard' className="flex items-center pb-2"><RxDashboard className="mr-2 text-xl" /> Profile</NavLink>
                     <NavLink to='gradesheet' className="flex items-center pb-2"><RxDashboard className="mr-2 text-xl" /> Gradesheet</NavLink>
                     <NavLink to='/dashboard' className="flex items-center pb-2"><RxDashboard className="mr-2 text-xl" /> Material</NavLink>
-                    <NavLink to='/dashboard' className="flex items-center pb-2"><RxDashboard className="mr-2 text-xl" /> Enroll</NavLink>
+                    <NavLink to='enroll' className="flex items-center pb-2"><RxDashboard className="mr-2 text-xl" /> Enroll</NavLink>
          
                 </div>
 

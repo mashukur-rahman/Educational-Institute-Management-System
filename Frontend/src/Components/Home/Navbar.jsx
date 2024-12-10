@@ -15,8 +15,7 @@ const Navbar = () => {
 
     const links = <>
         <li className="font-medium text-md "><NavLink to="/" >Home</NavLink></li>
-        <li className="font-medium  text-md"><NavLink to="/courses">Course</NavLink></li>
-        <li className="font-medium  text-md"><NavLink to="/courses">Faculty</NavLink></li>
+        <li className="font-medium  text-md"><NavLink to="/register">Sign in</NavLink></li>
         {/* {
             user && <><li className="font-medium text-lg" ><NavLink to="/userprofile">User Profile</NavLink></li></>
         } */}
