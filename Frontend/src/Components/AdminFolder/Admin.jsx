@@ -1,9 +1,9 @@
 import { useState } from "react";
+import { AiOutlineProfile } from "react-icons/ai";
 import { BsLayoutSidebar } from "react-icons/bs";
-import { FaArrowRightFromBracket } from "react-icons/fa6";
-import { MdOutlineLeaderboard } from "react-icons/md";
+import { CgProfile } from "react-icons/cg";
+import { FaArrowRightFromBracket, FaBookOpen } from "react-icons/fa6";
 import { RxDashboard } from "react-icons/rx";
-import { SiGitconnected } from "react-icons/si";
 import { VscInbox } from "react-icons/vsc";
 import { NavLink, Outlet } from "react-router-dom";
 
@@ -58,11 +58,11 @@ const Admin = () => {
                         <div className="font-bold">Student</div>
                         <button onClick={handleSideBar}><BsLayoutSidebar className="text-xl" /></button>
                     </div>
-                    <NavLink to='dashboard' className="flex items-center mt-4 py-2"><VscInbox className="mr-2 text-xl" />Dashboard</NavLink>
-                    <NavLink to='/dashboard' className="flex items-center pb-2"><RxDashboard className="mr-2 text-xl" /> Profile</NavLink>
+                    <NavLink to='studentdashboard' className="flex items-center mt-4 py-2"><VscInbox className="mr-2 text-xl" />Dashboard</NavLink>
+                    <NavLink to='/dashboard' className="flex items-center pb-2"><CgProfile  className="mr-2 text-xl" /> Profile</NavLink>
                     <NavLink to='gradesheet' className="flex items-center pb-2"><RxDashboard className="mr-2 text-xl" /> Gradesheet</NavLink>
-                    <NavLink to='/dashboard' className="flex items-center pb-2"><RxDashboard className="mr-2 text-xl" /> Material</NavLink>
-                    <NavLink to='enroll' className="flex items-center pb-2"><RxDashboard className="mr-2 text-xl" /> Enroll</NavLink>
+                    <NavLink to='material' className="flex items-center pb-2"><FaBookOpen className="mr-2 text-xl" /> Material</NavLink>
+                    <NavLink to='enroll' className="flex items-center pb-2"><AiOutlineProfile className="mr-2 text-xl" /> Enroll</NavLink>
          
                 </div>
 
