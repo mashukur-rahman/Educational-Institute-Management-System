@@ -16,6 +16,7 @@ const course_list = require("./Student_Dashboard/course_list");
 const enroll = require("./Student_Dashboard/enroll");
 const enrolled_courses_detail = require("./Student_Dashboard/enrolled_courses_detail");
 const enrolled_courses = require("./Student_Dashboard/enrolled_courses");
+const submit_grade = require("./Faculty_Dashboard/submit_grade");
 //aaaaa
 //comment
 const addUser = require("./Auth/addUser");
@@ -42,6 +43,7 @@ app.use("/api/course_list", course_list);
 app.use("/api/enroll", enroll);
 app.use("/api/enrolled_courses", enrolled_courses);
 app.use("/api/enrolled_courses_detail", enrolled_courses_detail);
+app.use("/api/submit_grade", submit_grade);
 app.listen(3000, (req, res) => {
   console.log("Server listening at port 3000");
 });
