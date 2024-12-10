@@ -4,7 +4,6 @@ import { Link, NavLink,  } from "react-router-dom";
 const Navbar = () => {
 
 
-
     // const handleLogout = () => {
     //     logOut()
     //         .then(() => {

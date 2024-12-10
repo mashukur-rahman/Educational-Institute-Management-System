@@ -6,6 +6,7 @@ import axios from "axios";
 import backendlink from "../../../src/backendapilink";
 import { useNavigate } from "react-router-dom";
 import { jwtDecode } from "jwt-decode";
+import Navbar from "../Home/Navbar";
 const Login = () => {
   const navigate = useNavigate();
   const [showPass, setShowPass] = useState(false);
@@ -43,6 +44,7 @@ const Login = () => {
       {/* <Helmet>
                 <title>Login</title>
             </Helmet> */}
+            <Navbar></Navbar>
       <div className="flex justify-center items-center">
         <div className="card  w-full max-w-md shadow-md shadow-roaming  shadow-blue-300 shadow-t-2 my-4 md:my-12">
           <form className="card-body" onSubmit={handleLogin}>

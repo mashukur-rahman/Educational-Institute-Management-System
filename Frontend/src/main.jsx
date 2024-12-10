@@ -24,6 +24,9 @@ import Gradesheet from "./Components/AdminFolder/Gradesheet";
 import Enroll from "./Components/StudentFolder/Enroll";
 import Material from "./Components/StudentFolder/Material";
 import Profile from "./Components/StudentFolder/Profile";
+import FacultyDashboard from "./Components/FacultyFolder/FacultyDashboard";
+import AddCourse from "./Components/FacultyFolder/AddCourse";
+import AddMaterial from "./Components/FacultyFolder/AddMaterial";
 
 const router = createBrowserRouter([
   {
@@ -45,6 +48,8 @@ const router = createBrowserRouter([
     path: "/admin",
     element: <Admin></Admin>,
     children: [
+
+      // student path 
       {
         path: "studentdashboard",
         element: <Dashboard></Dashboard>,
@@ -64,16 +69,26 @@ const router = createBrowserRouter([
         element: <Material></Material>,
       },
 
-      // {
-      //   path: "/studentdashboard",
-      //   element: <Dashboard />,
-
       {
         path: "profile",
         element: <Profile></Profile>,
       },
+      // faculty route 
+      {
+        path: "facultyDashboard",
+        element: <FacultyDashboard></FacultyDashboard>,
+      },
 
-      // },
+      {
+        path: "addCourse",
+        element: <AddCourse></AddCourse>,
+      },
+
+      {
+        path: "addMaterial",
+        element: <AddMaterial></AddMaterial>,
+      },
+
     ],
   },
 ]);
