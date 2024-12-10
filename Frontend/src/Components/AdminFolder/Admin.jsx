@@ -51,6 +51,7 @@ const Admin = () => {
                     <NavLink to='facultyDashboard' className="flex items-center mt-4 py-2"><VscInbox className="mr-2 text-xl" />Dashboard</NavLink>
                     <NavLink to='addCourse' className="flex items-center pb-2"><RxDashboard className="mr-2 text-xl" /> Create course</NavLink>
                     <NavLink to='addMaterial' className="flex items-center pb-2"><MdOutlineLeaderboard className="mr-2 text-xl" />Add material</NavLink>
+                    <NavLink to='facultygrade' className="flex items-center pb-2"><MdOutlineLeaderboard className="mr-2 text-xl" />Post Grade</NavLink>
                 </div> 
                 {/* if role student  */}
                 {/* <div>
